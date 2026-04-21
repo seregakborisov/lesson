@@ -1,13 +1,10 @@
-n = int(input("Вывести кол-во чисел последовательности Фибоначчи"))
 
-a = 1
-b = 1
-i = 0
+s = input("Введите слова: ")
 
-while i < n:
-    c = a + b
-    print(a)
-    a = b
-    b = c
-    i += 1
-    
+word = list(map(str, s.split()))
+
+#word = list(map(str, input("Введите слова: ").split()))
+
+result = list(filter(lambda x:  x == x[::-1], word))
+
+print("Паллиндромы: ", result)
