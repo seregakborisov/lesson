@@ -1,21 +1,15 @@
 import math
 
-a = int(input("Введите значение a: "))
-b = int(input("Введите значение b: "))
-x = int(input("Введите значение х: "))
+x = int(input("Введите х: "))
+n = int(input("Введите число n:"))
 
-ya = ((a ** 2) / 3) + (((a ** 2) + 4) / b) + ((((a ** 2) + 4) ** (0.5)) / 4) + ((((a ** 2) + 4) ** 3) ** (0.5)) / 4
+s = 0
+n_start = 0
 
-print("Задание а) y =", ya)
+while n_start <= n:
+    result = ((-1) ** n_start) * (x ** (2 * n_start)) / math.factorial(2 * n_start)
+    s += result
+    n_start += 1
 
-yb = math.cos(x) + math.sin(x)
+print("Сумма всех =", s, "~~", "cos(x) = ", math.cos(x))
 
-print("Задание b) y =", yb)
-
-yc = (((math.cos(x ** 2) ** 2)) + ((math.sin(2*x-1) ** 2))) ** (1/3)
-
-print("Задание c) y =", yc)
-
-yd = 5 * x + 3 * x ** 2 * (1 + math.sin(x) ** 2)
-
-print("Задание d) y =", yd)
