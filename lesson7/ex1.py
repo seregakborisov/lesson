@@ -9,3 +9,4 @@ print(f"Путь к файлу: {os.getcwd()}")
 
 print("-"*20)
 
+
