@@ -4,11 +4,11 @@ import shutil
 
 print(f"Версия операционной: {platform.platform()}, {platform.system()}")
 
-print("-"*20)
+print("-" * 20)
 
 print(f"Путь к файлу: {os.getcwd()}") 
 
-print("-"*20)
+print("-" * 20)
 
 direc = os.getcwd()
 
@@ -30,3 +30,5 @@ for file_name in os.listdir(direc):
         shutil.move(file_path, new_file_patch)
         
         print(f"Перемещение .{ext} выполнено")
+
+print("-" * 20)
