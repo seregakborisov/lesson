@@ -15,10 +15,8 @@ direc = os.getcwd()
 for file_name in os.listdir(direc):
     file_path = os.path.join(direc, file_name)
     
-    if os.path.isfile(file_path):
-        
-        ext_of_file = file_name.split(".")
-        
+    if os.path.isfile(file_path):        
+        ext_of_file = file_name.split(".")        
         ext = ext_of_file[-1]
         
         folder_name = ext
