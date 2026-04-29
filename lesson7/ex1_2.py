@@ -13,6 +13,7 @@ try:
     elif operat == "/":
         result = a / b
     else: result = "\n Некорректно введен оператор"
+    
     print(result)
 
 except ValueError:
