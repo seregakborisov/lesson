@@ -18,3 +18,6 @@ try:
 
 except ValueError:
     print("Некорректные данные! Введите число!")
+
+except ZeroDivisionError:
+    print("Делить на ноль нельзя!")
