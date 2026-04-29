@@ -17,8 +17,7 @@ with open (name_file, "r", encoding="utf-8") as f:
         for x in text:
             if x == z:
                 x = "***"
-                new_text.append(x)
-            else:
-                new_text.append(x)
+            new_text.append(x)
+            
             
 print(new_text)
