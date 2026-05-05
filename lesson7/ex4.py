@@ -10,14 +10,18 @@ with open("stop_words.txt", "r", encoding="utf-8") as sw:
     
 new_text = []
 
+
 with open (name_file, "r", encoding="utf-8") as f:
     text = f.read().split()
-    print(text)
-    for z in cens:
-        for x in text:
-            if x == z:
-                x = "***"
-            new_text.append(x)
+  
+    for word in text:
+        l = len(word)
+        if word not in cens:
+            new_text.append(word)
+        else:
+            new_text.append(word[0] + "*" * (l-2) + word[-1])
             
             
-print(new_text)
+            
+print(" ".join(new_text))
+            

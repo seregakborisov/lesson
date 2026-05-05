@@ -3,8 +3,13 @@
 try:
     weight = float(input("Введите свой вес, кг: "))
     height = float(input("Введите свой рост, м: "))
-
-    bmi = weight / (height * height)
+except ValueError:
+    print("\n !!! Введены некорректные данные!!! \n")
+try:
+        bmi = weight / (weight ** 2)
+        print(bmi)
+except ZeroDivisionError:
+    print("\n Рост или масса не может быть равен нулю! \n")
     
     if bmi < 16 and bmi > 0:
         result = "\n Выраженный дефицит массы тела \n"
@@ -24,11 +29,8 @@ try:
         result = "\n Масса тела не может быть меньше либо равна нулю! \n"
         bmi = "..."
         
-    print(result)
-    print(f" Индекс массы тела = {bmi} \n") 
+print(result)
+print(f" Индекс массы тела = {bmi} \n") 
     
-except ValueError:
-    print("\n !!! Введены некорректные данные!!! \n")
+
     
-except ZeroDivisionError:
-    print("\n Рост или масса не может быть равен нулю! \n")

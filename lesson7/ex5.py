@@ -26,4 +26,12 @@ with open ("emp.csv", "w") as c:
         car = data[i]["car"]
         languages = data[i]["languages"]
         i += 1
-        file_write.writerow([name,birthday,height,weight,car,languages]) 
+        file_write.writerow([name,birthday,height,weight,car,languages])
+with open ("emp.csv", "r") as find:
+    find_name = input("Введите искомой имя: ")
+    file_reader = csv.DictReader(find,  delimiter=",")
+    for name in file_reader:
+        if name == find_name:
+           print(f"Имя {row["name"]}, {row["car"]}")
+        else:
+            pass        
