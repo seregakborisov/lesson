@@ -8,3 +8,4 @@ class SuperStr(str):
 
     def is_palindrom(self):
         return self.lower() == self.lower()[::-1]
+    
