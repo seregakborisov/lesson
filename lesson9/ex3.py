@@ -1,4 +1,4 @@
-class autobus:
+class Autobus:
     def __init__(self, speed, max_places, max_speed):
         self.speed = speed
         self.max_places = max_places

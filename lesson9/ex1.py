@@ -1,4 +1,4 @@
-class product:
+class Product:
     def __init__(self, product_name, store_name, cost):
         self.product_name = product_name
         self.store_name = store_name
@@ -12,7 +12,7 @@ class product:
         print("Товар: " + self.product_name + ". Магазин: " + self.store_name + ". Стоимость:", self.cost, "руб.") 
         
     
-class storage:
+class Storage:
     def __init__(self):
         self.products = []
     
