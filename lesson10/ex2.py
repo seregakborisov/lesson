@@ -3,13 +3,13 @@ def infinity(n):
     i = 0
     z = 0
     while z < n:
-       yield cycle[i]
-       i += 1
-       z += 1
-       if i == 3:
-           i = 0
+        yield cycle[i]
+        i += 1
+        z += 1
+        if i == len(cycle):
+            i = 0
        
-n = int(input("Введите кол-во чисел из цикла"))
+n = int(input("Введите кол-во чисел из цикла: "))
 
 for result in infinity(n):
     print(result, end = ", ") 
