@@ -47,7 +47,13 @@ create table users_address(
 create table delivery(
 	delivert_id serial primary key,
 	order_id int references orders(id),
-	user_id int references users(id));
+	user_id int references users(id),
+    place int references products(dimensions)
+    delivery_city varchar(255) references users_address(city),
+	delivery_street varchar(255) references users_address(street),
+	delivery_bild varchar(255) references users_address(bild),
+	delivery_appart varchar(255) references users_address(appart))
+    ;
 	
 insert into category(name)
 values
