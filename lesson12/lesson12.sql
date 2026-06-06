@@ -41,7 +41,7 @@ create table users_address(
 	city varchar(255) not null,
 	street varchar(255) not null,
 	bild varchar(255) not null,
-	appart varchar(255) not null,
+	appart varchar(255) not null);
 
 
 create table delivery(
@@ -105,3 +105,27 @@ select
     id,
     user_id
 from orders;
+
+
+select
+    users.name,
+    users.surname,
+    users_address.city,
+    users_address.street,
+    users_address.bild,
+    users_address.appart
+from users
+join users_address
+    on users.id = users_address.user_id;
+
+
+select
+    orders.id,
+    orders.user_id,
+    users_address.city,
+    users_address.street,
+    users_address.bild,
+    users_address.appart
+from orders
+join users_address
+    on orders.id = users_address.user_id;
