@@ -47,9 +47,61 @@ create table users_address(
 create table delivery(
 	delivert_id serial primary key,
 	order_id int references orders(id),
-	user_id int references users(id),
-	delivery_city varchar(255) references users_address(city),
-	delivery_street varchar(255) references users_address(street),
-	delivery_bild varchar(255) references users_address(bild),
-	delivery_appart varchar(255) references users_address(appart));
+	user_id int references users(id));
 	
+insert into category(name)
+values
+('Food'),
+('Electronics'),
+('Books'),
+('Tools'),
+('Clothes');
+
+insert into users(name, surname, age)
+select
+    'Name_' || gs,
+    'Surname_' || gs,
+    (18 + random() * 50)::int
+from generate_series(1,100000) gs;
+
+insert into users_address(user_id, city, street, bild, appart)
+select
+    id,
+    'City_' || (id % 100),
+    'Street_' || (id % 500),
+    (id % 200 + 1)::text,
+    (id % 300 + 1)::text
+from users;
+
+insert into products(name, category, price, dimensions)
+select
+    'Product_' || gs,
+    (array['Food','Electronics','Books','Tools','Clothes'])
+        [((random()*4)::int)+1],
+    (random()*5000 + 100)::int,
+    (random()*100 + 1)::int
+from generate_series(1,100000) gs;
+
+insert into orders(user_id)
+select
+    (random()*99999 + 1)::int
+from generate_series(1,100000);
+
+insert into orders_product(order_id, product_id)
+select
+    (random()*99999 + 1)::int,
+    (random()*99999 + 1)::int
+from generate_series(1,100000);
+
+insert into discount(user_id, discount, sum_orders)
+select
+    id,
+    (random()*30)::int,
+    (random()*50000)::int
+from users;
+
+insert into delivery(order_id, user_id)
+select
+    id,
+    user_id
+from orders;
