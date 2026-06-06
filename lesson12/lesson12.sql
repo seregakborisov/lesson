@@ -43,10 +43,6 @@ create table users_address(
 	bild varchar(255) not null,
 	appart varchar(255) not null,
 
-	unique(user_id, city),
-	unique(user_id, street),
-	unique(user_id, bild),
-	unique(user_id, appart));
 
 create table delivery(
 	delivert_id serial primary key,
@@ -57,4 +53,3 @@ create table delivery(
 	delivery_bild varchar(255) references users_address(bild),
 	delivery_appart varchar(255) references users_address(appart));
 	
-drop table 
