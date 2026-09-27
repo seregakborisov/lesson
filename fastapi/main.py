@@ -20,8 +20,8 @@ class Item(BaseModel):
     age: int
     photo: Image
 
-@app.post("/items")
-asunc def vlozh(item: Item):
+@app.post("/profile")
+async def user_profile(item: Item):
     return item
 
 
