@@ -11,6 +11,20 @@ class User(BaseModel):
     email: str
 
 
+class Image(BaseModel):
+    url: str
+    name: str
+
+class Item(BaseModel):
+    name: str
+    age: int
+    photo: Image
+
+@app.post("/items")
+asunc def vlozh(item: Item):
+    return item
+
+
 users = [ ]
 
 next_id = 0
